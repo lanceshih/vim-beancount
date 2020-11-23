@@ -119,8 +119,8 @@ function! beancount#complete(findstart, base) abort
 endfunction
 
 function! beancount#get_root() abort
-    if exists('b:beancount_root')
-        return b:beancount_root
+    if exists('g:beancount_root')
+        return g:beancount_root
     endif
     return expand('%')
 endfunction

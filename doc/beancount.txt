@@ -78,7 +78,7 @@ OPTIONS                                              *beancount-options*
 
   Default value: 50
 
-*b:beancount_root*
+*g:beancount_root*
   Set the root Beancount file. This is used to gather values for the
   completion. If not set, the current file will be used.
 
@@ -90,7 +90,7 @@ COMPLETION                                           *beancount-completion*
 The plugin sets 'omnifunc' to provide omni completion for account names, tags,
 links, and payees. Omni completion is accessible with |i_CTRL-X_CTRL-O|.
 
-Completion works for values defined |b:beancount_root| and included files.
+Completion works for values defined |g:beancount_root| and included files.
 
 Account Completion~
                                                      *beancount-complete-accounts*
