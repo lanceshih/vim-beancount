@@ -134,6 +134,7 @@ from beancount import loader
 from beancount.core import data
 
 accounts = set()
+closed_accounts = set()
 currencies = set()
 events = set()
 links = set()
@@ -157,6 +158,10 @@ for index, entry in enumerate(entries):
             links.update(entry.links)
         if entry.payee:
             payees.add(entry.payee)
+
+    if isinstance(entry, data.Close):
+      closed_accounts.add(entry.account)
+    accounts -= closed_accounts
 
 vim.command('let b:beancount_accounts = [{}]'.format(','.join(repr(x) for x in sorted(accounts))))
 vim.command('let b:beancount_currencies = [{}]'.format(','.join(repr(x) for x in sorted(currencies))))
