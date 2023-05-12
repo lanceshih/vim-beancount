@@ -229,6 +229,7 @@ function! beancount#complete_account(base) abort
     while 1
         let l:index = match(b:beancount_accounts, l:pattern, l:index + 1)
         if l:index == -1 | break | endif
+
         call add(l:matches, matchstr(b:beancount_accounts[l:index], l:pattern))
     endwhile
 
@@ -262,4 +263,5 @@ function! beancount#get_context() abort
     setlocal buftype=nofile bufhidden=hide noswapfile
     call append(0, split(l:context, '\v\n'))
     normal! gg
+
 endfunction
